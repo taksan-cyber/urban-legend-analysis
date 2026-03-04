@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プライバシーポリシー・免責事項 | Truth Seeker</title>
-    <meta name="description" content="Truth Seekerのプライバシーポリシーと免責事項に関するページです。個人情報の取り扱い、Google AdSense、クッキーの使用について説明します。">
+    <title>このサイトについて | Truth Seeker</title>
+    <meta name="description" content="Truth Seekerの目的と編集方針について。私たちは論理と科学の力で都市伝説の深淵に迫ります。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -68,6 +68,23 @@
             letter-spacing: -0.02em;
         }
 
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
         main {
             padding-top: calc(var(--header-h) + 4rem);
             padding-bottom: 4rem;
@@ -100,24 +117,20 @@
             padding-bottom: 0.5rem;
         }
 
-        h3 {
-            font-size: 1.1rem;
-            margin: 1.5rem 0 0.75rem;
-            color: var(--text-main);
-        }
-
-        p,
-        ul {
+        p {
             font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        ul {
-            margin-left: 1.5rem;
+        .mission-box {
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
         }
 
-        li {
+        .mission-box h3 {
+            color: var(--text-main);
             margin-bottom: 0.5rem;
         }
 
@@ -133,8 +146,8 @@
                 font-size: 2rem;
             }
 
-            section {
-                padding: 1.5rem;
+            nav {
+                display: none;
             }
         }
     </style>
@@ -157,51 +170,41 @@
     </header>
 
     <main class="container">
-        <h1>プライバシーポリシー・免責事項</h1>
+        <h1>About Truth Seeker</h1>
 
-        <section id="privacy-policy">
-            <h2>プライバシーポリシー</h2>
-            <p>当ブログ「Truth Seeker」（以下、「当サイト」）における、訪問者様の個人情報の取り扱いおよび、広告配信サービス等の利用について以下の通り定めます。</p>
-
-            <h3>1. 広告の配信について</h3>
-            <p>当サイトは、第三者配信の広告サービス「Google AdSense（グーグルアドセンス）」を利用しています。</p>
-            <p>Googleなどの第三者広告配信事業者は、訪問者様の過去のアクセス情報に基づいて適切な広告を配信するため、Cookie（クッキー）を使用することがあります。</p>
-            <p>訪問者様は、Googleの広告設定でパーソナライズ広告を無効にすることができます。詳細やクッキーの無効化方法については、<a
-                    href="https://policies.google.com/technologies/ads"
-                    style="color: var(--accent);">Googleのポリシーと規約</a>をご覧ください。</p>
-
-            <h3>2. アクセス解析ツールについて</h3>
-            <p>当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。このGoogleアナリティクスはトラフィックデータの収集のためにクッキーを使用しています。トラフィックデータは匿名で収集されており、個人を特定するものではありません。
+        <section id="site-purpose">
+            <h2>当サイトの目的</h2>
+            <p>
+                「Truth
+                Seeker」は、世界中に溢れる都市伝説や陰謀論を、単なるエンターテインメントとして消費するのではなく、科学的根拠、歴史的事実、そして心理学的知見に基づいて論理的に検証することを目的とした特化型ブログです。
             </p>
+            <div class="mission-box">
+                <h3>私たちのミッション</h3>
+                <p>「未知への畏怖を、既知への好奇心に変えること」</p>
+            </div>
+            <p>
+                私たちは、刺激的な見出しや根拠のない憶測による情報の拡散を避け、可能な限り中立的な立場から事実の断片を繋ぎ合わせます。真実はしばしば、最も奇妙な物語よりもさらに奥深く、魅力的なものであるからです。
+            </p>
+        </section>
 
-            <h3>3. 個人情報の利用目的</h3>
-            <p>当サイトにおいて、お問い合わせ等を通じて提供いただいた個人情報は、ご質問に対する回答や必要な情報を電子メールなどでご連絡する場合にのみ利用いたします。これらの目的以外では利用いたしません。</p>
-
-            <h3>4. 個人情報の第三者への開示</h3>
-            <p>当サイトでは個人情報を適切に管理し、以下に該当する場合を除いて第三者に開示することはありません。</p>
-            <ul>
-                <li>本人のご了解がある場合</li>
-                <li>法令等への協力のため、開示が必要となる場合</li>
+        <section id="editorial-policy">
+            <h2>編集方針</h2>
+            <p>当サイトの記事は、以下の5つのステップによる厳格な検証プロセスを経て作成されています。</p>
+            <ul style="color: var(--text-muted); margin-left: 1.5rem; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                <li style="margin-bottom: 0.5rem;"><strong>都市伝説の全容把握</strong>：囁かれている物語の核心を特定します。</li>
+                <li style="margin-bottom: 0.5rem;"><strong>拡散のメカニズム分析</strong>：なぜその物語が人々の心を掴んだのかを社会学的に探ります。</li>
+                <li style="margin-bottom: 0.5rem;"><strong>科学的・歴史的実証</strong>：公的記録や物理法則に照らし合わせて検証します。</li>
+                <li style="margin-bottom: 0.5rem;"><strong>残された謎への注釈</strong>：現在の科学で解明できない部分については、憶測を交えず事実として提示します。</li>
+                <li style="margin-bottom: 0.5rem;"><strong>合理的結論の提示</strong>：得られた証拠から最も妥当と思われる解釈を導き出します。</li>
             </ul>
         </section>
 
-        <section id="disclaimer">
-            <h2>免責事項</h2>
-            <h3>1. 情報の正確性について</h3>
-            <p>当サイトのコンテンツ・情報について、可能な限り正確な情報を掲載するよう努めておりますが、正確性や安全性を保証するものではありません。情報の最新性や正確性に疑問がある場合、予告なく記事の修正・削除を行うことがあります。
+        <section id="contact-info">
+            <h2>お問い合わせ</h2>
+            <p>
+                内容に関するご質問、修正依頼、あるいは新しい検証のトピックの提案などは、<a href="contact.html"
+                    style="color: var(--accent); text-decoration: none;">お問い合わせページ</a>より受け付けております。
             </p>
-
-            <h3>2. 損害等の責任について</h3>
-            <p>当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。</p>
-            <p>また、当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。</p>
-
-            <h3>3. 著作権・肖像権について</h3>
-            <p>当サイトで掲載している文章や画像などにつきましては、著作権は放棄しておりません。無断転載することを禁止します。また、当サイト内での引用等は、著作権法上認められた適正な範囲内で行っております。</p>
-        </section>
-
-        <section id="copyright-notice">
-            <h2>策定・改訂日</h2>
-            <p>策定：2026年3月3日</p>
         </section>
     </main>
 

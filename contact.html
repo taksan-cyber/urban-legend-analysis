@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プライバシーポリシー・免責事項 | Truth Seeker</title>
-    <meta name="description" content="Truth Seekerのプライバシーポリシーと免責事項に関するページです。個人情報の取り扱い、Google AdSense、クッキーの使用について説明します。">
+    <title>お問い合わせ | Truth Seeker</title>
+    <meta name="description" content="Truth Seekerへのお問い合わせページです。記事に関するご意見や検証のリクエストはこちらから。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -68,6 +68,23 @@
             letter-spacing: -0.02em;
         }
 
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
         main {
             padding-top: calc(var(--header-h) + 4rem);
             padding-bottom: 4rem;
@@ -100,25 +117,64 @@
             padding-bottom: 0.5rem;
         }
 
-        h3 {
-            font-size: 1.1rem;
-            margin: 1.5rem 0 0.75rem;
-            color: var(--text-main);
-        }
-
-        p,
-        ul {
+        p {
             font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
 
-        ul {
-            margin-left: 1.5rem;
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        li {
-            margin-bottom: 0.5rem;
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        input,
+        textarea {
+            background-color: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--accent), #0ea5e9);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
 
         footer {
@@ -131,6 +187,10 @@
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
+            }
+
+            nav {
+                display: none;
             }
 
             section {
@@ -157,51 +217,43 @@
     </header>
 
     <main class="container">
-        <h1>プライバシーポリシー・免責事項</h1>
+        <h1>Contact</h1>
 
-        <section id="privacy-policy">
-            <h2>プライバシーポリシー</h2>
-            <p>当ブログ「Truth Seeker」（以下、「当サイト」）における、訪問者様の個人情報の取り扱いおよび、広告配信サービス等の利用について以下の通り定めます。</p>
-
-            <h3>1. 広告の配信について</h3>
-            <p>当サイトは、第三者配信の広告サービス「Google AdSense（グーグルアドセンス）」を利用しています。</p>
-            <p>Googleなどの第三者広告配信事業者は、訪問者様の過去のアクセス情報に基づいて適切な広告を配信するため、Cookie（クッキー）を使用することがあります。</p>
-            <p>訪問者様は、Googleの広告設定でパーソナライズ広告を無効にすることができます。詳細やクッキーの無効化方法については、<a
-                    href="https://policies.google.com/technologies/ads"
-                    style="color: var(--accent);">Googleのポリシーと規約</a>をご覧ください。</p>
-
-            <h3>2. アクセス解析ツールについて</h3>
-            <p>当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。このGoogleアナリティクスはトラフィックデータの収集のためにクッキーを使用しています。トラフィックデータは匿名で収集されており、個人を特定するものではありません。
+        <section id="contact-form-section">
+            <h2>お問い合わせフォーム</h2>
+            <p>
+                記事の内容に関するご指摘、検証依頼、広告掲載のご相談など、以下のフォームよりお気軽にお問い合わせください。
+                返信には数日お時間をいただく場合がございます。
             </p>
-
-            <h3>3. 個人情報の利用目的</h3>
-            <p>当サイトにおいて、お問い合わせ等を通じて提供いただいた個人情報は、ご質問に対する回答や必要な情報を電子メールなどでご連絡する場合にのみ利用いたします。これらの目的以外では利用いたしません。</p>
-
-            <h3>4. 個人情報の第三者への開示</h3>
-            <p>当サイトでは個人情報を適切に管理し、以下に該当する場合を除いて第三者に開示することはありません。</p>
-            <ul>
-                <li>本人のご了解がある場合</li>
-                <li>法令等への協力のため、開示が必要となる場合</li>
-            </ul>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('デモ用のフォームです。実際の送信機能は実装されていません。');">
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" required placeholder="山田 太郎">
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required placeholder="user@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="subject">件名</label>
+                    <input type="text" id="subject" name="subject" required placeholder="記事に関するお問い合わせ">
+                </div>
+                <div class="form-group">
+                    <label for="message">本文</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="具体的な内容をご記入ください"></textarea>
+                </div>
+                <button type="submit">メッセージを送信する</button>
+            </form>
         </section>
 
-        <section id="disclaimer">
-            <h2>免責事項</h2>
-            <h3>1. 情報の正確性について</h3>
-            <p>当サイトのコンテンツ・情報について、可能な限り正確な情報を掲載するよう努めておりますが、正確性や安全性を保証するものではありません。情報の最新性や正確性に疑問がある場合、予告なく記事の修正・削除を行うことがあります。
+        <section id="email-backup">
+            <h2>直接のメールによる連絡</h2>
+            <p>
+                フォームが動作しない場合や、ファイルを添付してのご連絡が必要な場合は、以下のダミーアドレスまでご連絡ください。<br>
+                <code
+                    style="background: var(--bg-dark); padding: 2px 6px; border-radius: 4px; color: var(--accent);">info@example.com</code><br>
+                <small>※スパム対策のためダミーアドレスを記載しています。公開版では適切な連絡方法をご検討ください。</small>
             </p>
-
-            <h3>2. 損害等の責任について</h3>
-            <p>当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。</p>
-            <p>また、当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。</p>
-
-            <h3>3. 著作権・肖像権について</h3>
-            <p>当サイトで掲載している文章や画像などにつきましては、著作権は放棄しておりません。無断転載することを禁止します。また、当サイト内での引用等は、著作権法上認められた適正な範囲内で行っております。</p>
-        </section>
-
-        <section id="copyright-notice">
-            <h2>策定・改訂日</h2>
-            <p>策定：2026年3月3日</p>
         </section>
     </main>
 
