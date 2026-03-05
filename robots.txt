@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://taksan-cyber.github.io/my-website/sitemap.xml
+Sitemap: https://taksan-cyber.github.io/sitemap.xml
