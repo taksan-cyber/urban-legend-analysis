@@ -4,24 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>記事テンプレート | Truth Seeker - 都市伝説の論理的検証</title>
-    <meta name="description" content="都市伝説の検証記事用テンプレート。概要、拡散理由、科学的検証、未解決の謎、結論の5ステップで構成。">
+    <title>記事テンプレート | Truth Seeker - 論理と怪異の境界線</title>
+    <meta name="description" content="都市伝説の真相を科学的に解剖する、次世代の調査レポート。概要、拡散理由、実証、謎、結論の5層構造。">
+    <!-- Google Fonts: Outfit for headers, Noto Sans JP for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;700&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --accent: #38bdf8;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: #334155;
-            --header-h: 70px;
+            /* Deep Space Palette */
+            --bg-base: #020617;
+            --bg-surface: rgba(15, 23, 42, 0.7);
+            --bg-accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.2);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-dim: #64748b;
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --header-blur: 15px;
+            --container-w: 840px;
         }
 
+        /* Essential Reset & Body */
         * {
             margin: 0;
             padding: 0;
@@ -29,257 +35,436 @@
         }
 
         body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
             line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 50% -20%, #1e293b 0%, transparent 60%),
+                radial-gradient(circle at -10% 40%, #0f172a 0%, transparent 40%);
         }
 
+        /* Glassmorphism Navigation */
         header {
-            height: var(--header-h);
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border);
             position: fixed;
-            width: 100%;
-            top: 0;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1000px;
+            height: 60px;
+            background: rgba(2, 6, 23, 0.6);
+            backdrop-filter: blur(var(--header-blur));
+            border: 1px solid var(--border-glass);
+            border-radius: 40px;
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .nav-wrapper {
+        .nav-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100%;
+            width: 100%;
         }
 
         .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--accent);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #fff;
             text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
-        .post-hero {
-            padding-top: calc(var(--header-h) + 4rem);
-            padding-bottom: 3rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 3rem;
-        }
-
-        .post-meta {
-            display: flex;
-            gap: 1rem;
-            font-size: 0.85rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .post-hero h1 {
-            font-size: 2.8rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(to right, #fff, var(--text-muted));
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #fff 0%, var(--bg-accent) 100%);
             -webkit-background-clip: text;
-            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .post-intro {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            border-left: 3px solid var(--accent);
-            padding-left: 1.5rem;
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
         }
 
-        section {
-            margin-bottom: 4rem;
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            color: var(--bg-accent);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            z-index: 1001;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--bg-accent);
+            width: 0%;
+            box-shadow: 0 0 10px var(--bg-accent);
+        }
+
+        /* Hero Section - Immersive */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .category-tag {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--bg-accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            background: var(--accent-glow);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        h1 {
+            font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: -0.02em;
+        }
+
+        .post-intro {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.9;
+        }
+
+        /* Main Content Layout */
+        main {
+            max-width: var(--container-w);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+        }
+
+        /* Article Glass Cards */
+        article section {
+            background: var(--bg-surface);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: clamp(1.5rem, 5vw, 3.5rem);
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, border-color 0.4s ease;
+        }
+
+        article section:hover {
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-5px);
         }
 
         h2 {
+            font-family: 'Outfit', 'Noto Sans JP', sans-serif;
             font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #fff;
             display: flex;
             align-items: center;
-            color: var(--accent);
         }
 
         h2::before {
-            content: '';
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--accent);
+            content: "";
+            width: 4px;
+            height: 24px;
+            background: var(--bg-accent);
             margin-right: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 0 10px var(--bg-accent);
         }
 
         p {
             margin-bottom: 1.5rem;
-            color: var(--text-main);
+            font-size: 1.05rem;
         }
 
-        .highlight-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
+        /* Highlight Elements */
+        .info-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 4px solid var(--bg-accent);
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
             margin: 2rem 0;
         }
 
-        .conclusion-box {
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), transparent);
-            border: 1px solid var(--accent);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin: 4rem 0;
+        .info-box strong {
+            color: var(--bg-accent);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: 'Outfit';
+            text-transform: uppercase;
         }
 
-        .conclusion-box h3 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
+        /* Conclusion - Ultra Premium */
+        .conclusion {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border: 2px solid var(--bg-accent) !important;
+            position: relative;
+            overflow: hidden;
         }
 
+        .conclusion::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .conclusion h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: var(--bg-accent);
+            position: relative;
+            z-index: 1;
+        }
+
+        .conclusion p {
+            position: relative;
+            z-index: 1;
+            font-weight: 500;
+        }
+
+        /* Footer */
         footer {
-            border-top: 1px solid var(--border);
-            padding: 4rem 0;
+            margin-top: 80px;
+            padding: 100px 0 60px;
+            border-top: 1px solid var(--border-glass);
             text-align: center;
-            color: var(--text-muted);
         }
 
+        .footer-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            display: block;
+            color: var(--text-dim);
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+        }
+
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .post-hero h1 {
-                font-size: 2rem;
+            header {
+                padding: 0 1rem;
+                width: 95%;
             }
+
+            nav ul {
+                gap: 0.8rem;
+            }
+
+            nav a {
+                font-size: 0.7rem;
+            }
+
+            .hero {
+                padding-top: 140px;
+            }
+
+            article section {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Fade-in Animation */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 
 <body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
     <header>
-        <div class="container" style="max-width: 1000px;">
-            <div class="nav-wrapper">
-                <a href="../index.html" class="logo">Truth Seeker</a>
-                <nav>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../about.html">About</a></li>
-                        <li><a href="../contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+        <div class="nav-inner">
+            <a href="../index.html" class="logo">TRUTH SEEKER</a>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
-        <article>
-            <div class="post-hero">
-                <div class="post-meta">
-                    <span>File No. 004</span>
-                    <span>•</span>
-                    <span>Psychology</span>
-                </div>
-                <h1>見捨てられた軍用無線：深夜3時の「囁き」と周波数の罠</h1>
-                <p class="post-intro">
-                    関東某所の廃墟から発信され続けているとされる、謎の音声信号。
-                    聴いた者は「3日以内に自分の声が出なくなる」というこの噂の真相を、電磁波工学と認知心理学の視点から解剖します。
-                </p>
-            </div>
+    <div class="hero">
+        <span class="category-tag">File No. 000 • Investigating</span>
+        <h1>記事タイトルをここに入力：<br><span style="color: var(--text-secondary);">サブタイトルがあればここに。</span></h1>
+        <p class="post-intro">
+            記事の導入文をここに記載します。読者の興味を惹きつけ、なぜこの都市伝説を今、私たちが検証すべきなのかを、論理的かつミステリアスな文体で提示してください。
+        </p>
+    </div>
 
+    <main>
+        <article>
             <!-- 1. 都市伝説の概要 -->
-            <section id="overview">
+            <section class="scroll-reveal">
                 <h2>1. 都市伝説の概要</h2>
                 <p>
-                    1990年代後半から、ネット掲示板のごく一部で囁かれ始めた噂がある。山間部に放棄された旧日本軍の通信施設から、今なお「特定の周波数」で不可解な音声が放送されているというものだ。
+                    検証対象となる都市伝説の具体的な内容を記述します。いつ、どこで、誰が、どのような体験をしたとされるのか。物語のディテールを正確にトレースします。
                 </p>
                 <p>
-                    その音声は、不明瞭な女性の話し声、あるいは数字を読み上げるような単調なトーンで構成されており、深夜3時から3時33分までの間だけ受信できるとされる。最大の怪異は、この音声を最後まで聴いた人物の「声」が失われるという後日談にある。
+                    読者がその景観を脳裏に描けるよう、視覚的な要素や、その噂が持つ独特の「温度感」を言葉にしてください。
                 </p>
             </section>
 
             <!-- 2. なぜ広まったのか -->
-            <section id="viral-reason">
+            <section class="scroll-reveal">
                 <h2>2. なぜ広まったのか</h2>
                 <p>
-                    この伝説が急速に広まった背景には、当時の「乱数放送（ナンバー・ステーション）」への過度な関心がある。冷戦時代から実在した、諜報活動用とされる謎の放送が一般に知られるようになり、そこに日本の廃墟文化が融合した。
+                    社会心理学、あるいは技術的背景から、なぜこの物語が爆発的に拡散したのかを分析します。人々のどのような不安や、時代のニーズがこの噂を強力なバイラル・コンテンツに変えたのでしょうか。
                 </p>
-                <div class="highlight-box">
-                    <strong>拡散のトリガー：</strong>
-                    <ul style="margin-top: 1rem; margin-left: 1.5rem;">
-                        <li>「深夜3時」という呪術的な、いわゆる「丑三つ時」との符号</li>
-                        <li>実在する廃墟（旧海軍通信機基地など）の存在によるリアリティ</li>
-                        <li>声を失うという、ネット黎明期の「タイピング以外で意思疎通できない」という不安の象徴</li>
-                    </ul>
+                <div class="info-box">
+                    <strong>VIRAL ANALYSIS</strong>
+                    <p>拡散のキーワード：インターネット黎明期、不可逆的な変化、集合的無意識の表出。これらが複雑に絡み合い、噂は「真実」としての重みを獲得しました。</p>
                 </div>
             </section>
 
             <!-- 3. 科学的・歴史的検証 -->
-            <section id="verification">
+            <section class="scroll-reveal">
                 <h2>3. 科学的・歴史的検証</h2>
                 <p>
-                    まず、物理的な側面から検証する。該当地域において深夜3時に電波計測を行った結果、確かに微弱な「ノイズ」が観測された。しかし、これは軍事施設からの放送ではなく、近隣のAMラジオ局による「電波干渉」および「混信」であることが判明した。
+                    ここが本稿の核心です。物理法則、公的記録、統計データ、あるいは専門家の知見を動員し、伝説を冷徹に解剖します。
                 </p>
                 <p>
-                    夜間は電離層の状態により、長距離の電波が届きやすくなる（スポラディックE層など）。深夜3時は多くの基地局が出力を落とす時間帯であり、かえって遠方の微弱な電波や、電子機器から発せられる微弱な高調波ノイズが目立ちやすくなる。
-                </p>
-                <p>
-                    「声を失う」という現象についても、医学的根拠はない。これは「心因性失声症」の一種であり、強い恐怖体験（恐怖心を煽るドキュメンタリーや噂への過度な没入）が、一時的に発声筋肉を硬直させる「ノーシーボ効果」である可能性が高い。
+                    「あり得ないこと」を排除した後に残るのが、どれほど奇妙なものであっても、それが真実への足がかりとなります。論理の飛躍を許さず、事実の断片を一つずつ積み上げていきます。
                 </p>
             </section>
 
             <!-- 4. 残る疑問 -->
-            <section id="remaining-mysteries">
+            <section class="scroll-reveal">
                 <h2>4. 残る疑問</h2>
                 <p>
-                    しかし、一つだけ説明がつかない事象がある。検証中に録音されたノイズを周波数解析したところ、人間の可聴域を超えた領域で、極めて規則的な「心拍数に近いパルス」が重畳されていたのだ。
+                    全ての論理的検証を経た後でも、どうしても説明がつかない「特異点」を提示します。科学が未だ光を当てられていない領域。そこにあるのは、単なる未発見の法則か、あるいは——。
                 </p>
                 <p>
-                    これは自然発生的な電波ノイズとしては不自然なほど整合性があり、何らかの意図的な信号……例えば、超低周波を用いた生物学的影響の実験などの痕跡ではないかという疑念を拭いきれない。
+                    憶測を完璧に排除しつつ、事実として存在する「空白」を誠実に描写します。
                 </p>
             </section>
 
             <!-- 5. 合理的結論 -->
-            <section id="conclusion" class="conclusion-box">
+            <section class="scroll-reveal conclusion">
                 <h3>5. 合理的結論</h3>
                 <p>
-                    この都市伝説の正体は、<strong>「夜間の電波特性による自然現象」と「乱数放送への好奇心」が混ざり合い、ネット掲示板の集合知によって脚色されたバイラル・ノベル</strong>であると結論付けられる。
+                    得られた全ての証拠から、最も妥当と思われる解釈を導き出します。多くの場合、真実は退屈なものかもしれませんが、その「退屈な真実」を認めることこそが、知的な検証の終着点です。
                 </p>
-                <p>
-                    「失声」の正体は自己暗示による心理的なブレーキであり、物理的な呪いや、現代まで続く放送は存在しない。
-                </p>
-                <p style="margin-top: 2rem; font-style: italic; color: var(--accent);">
-                    真相は常に、冷徹なデータと我々の脳が描く幻想の境界線にある。
+                <p style="margin-top: 2rem; font-style: italic; color: var(--bg-accent);">
+                    真相は常に、データと幻想の狭間に静かに横たわっている。
                 </p>
             </section>
         </article>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Truth Seeker - Logical Urban Legend Verification Project.</p>
-            <nav style="font-size: 0.85rem; margin-top: 1rem;">
-                <a href="../about.html"
-                    style="color: var(--text-muted); text-decoration: none; margin: 0 10px;">当サイトについて</a>
-                <a href="../contact.html"
-                    style="color: var(--text-muted); text-decoration: none; margin: 0 10px;">お問い合わせ</a>
-                <a href="../privacy.html"
-                    style="color: var(--text-muted); text-decoration: none; margin: 0 10px;">プライバシーポリシー</a>
-            </nav>
+        <span class="footer-logo">TRUTH SEEKER</span>
+        <div class="footer-nav">
+            <a href="../about.html">About Us</a>
+            <a href="../contact.html">Contact</a>
+            <a href="../privacy.html">Privacy Policy</a>
+        </div>
+        <div class="copyright">
+            &copy; 2026 TRUTH SEEKER - LOGICAL OCCULT INVESTIGATION PROJECT.
         </div>
     </footer>
+
+    <script>
+        // Scroll Progress Bar
+        window.onscroll = function () {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+
+            // Scroll Reveal Logic
+            let reveals = document.querySelectorAll(".scroll-reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = reveals[i].getBoundingClientRect().top;
+                let elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("visible");
+                }
+            }
+        };
+
+        // Initial Trigger for visible elements
+        window.dispatchEvent(new Event('scroll'));
+    </script>
 </body>
 
 </html>
